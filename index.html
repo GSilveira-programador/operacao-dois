@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Operação Dois — um convite secreto</title>
+<style>
+:root{color-scheme:light;--paper:#fff;--ink:#4a0d18;--red:#a5162c;--deep-red:#750f20}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 20%,#cf3045,var(--deep-red) 76%);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+main{width:min(100%,540px);padding:clamp(20px,6vw,48px);border:1px solid #f0c2c9;border-radius:24px;background:var(--paper);box-shadow:0 24px 70px #560917;text-align:center}
+.eyebrow{color:var(--red);letter-spacing:.22em;text-transform:uppercase;font:700 .72rem/1.5 monospace;margin:0 0 14px}
+.seal{display:grid;place-items:center;margin:0 auto 22px;width:74px;height:74px;border:1px dashed var(--red);border-radius:50%;color:var(--red);font:2.5rem Georgia,serif;transform:rotate(-12deg)}
+h1,h2{margin:0;font:normal clamp(2rem,8vw,3.4rem)/1.03 Georgia,serif;letter-spacing:-.04em}
+p{margin:16px 0 22px}
+button{font:700 1rem/1.3 system-ui,sans-serif;display:inline-block;min-height:48px;padding:13px 18px;border:1px solid transparent;border-radius:12px;cursor:pointer;color:var(--paper);background:var(--red);text-decoration:none}
+button:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+footer{margin-top:25px;color:var(--red);font: .72rem monospace;letter-spacing:.14em}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+  <div class="seal" aria-hidden="true">✶</div>
+  <section id="envelope">
+    <p class="eyebrow">Arquivo confidencial · 01</p>
+    <h1>Operação Dois</h1>
+    <p>Tem um plano secreto aqui. Só falta a minha dupla.</p>
+    <button id="open" type="button">Romper o lacre ✦</button>
+  </section>
+  <section id="mission" hidden>
+    <p class="eyebrow">Convite revelado · 02</p>
+    <h2 tabindex="-1">Bora sair comigo?</h2>
+    <p>Tô com vontade de te ver e passar um tempo com você. Que tal a gente sair nesta sexta à noite?</p>
+    <p><strong><time datetime="2026-11-06">Sexta-feira, 6 de novembro</time> · À noite</strong></p>
+    <p>Se topar, me chama. A gente combina os detalhes. ♡</p>
+  </section>
+  <footer>✦ &nbsp; FIM DO ARQUIVO &nbsp; ✦</footer>
+</main>
+<script>
+const envelope = document.getElementById('envelope');
+const mission = document.getElementById('mission');
+document.getElementById('open').onclick = () => {
+  envelope.hidden = true;
+  mission.hidden = false;
+  mission.querySelector('h2').focus();
+};
+</script>
+</body>
+</html>
